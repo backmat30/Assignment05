@@ -76,7 +76,7 @@ public class CardGroup {
      * @return returns the removed card
      */
     public Card removeCard(int index){
-
+        return cardList.remove(index);
     }
 
     /**
@@ -84,7 +84,10 @@ public class CardGroup {
      * @return returns the removed card
      */
     public Card removeLastCard(){
-
+        if(cardList.size() == 0){
+            return null;
+        }
+        return cardList.remove(cardList.size() - 1);
     }
 
     /**
@@ -92,7 +95,12 @@ public class CardGroup {
      * @param random random object to use for shuffling
      */
     public void shuffle(Random random){
-
+        for(int i = cardList.size(); i > 0; i--){
+            Card currentCard = cardList.get(i);
+            int swapIndex = random.nextInt(i);
+            cardList.set(i, cardList.get(swapIndex));
+            cardList.set(swapIndex, currentCard);
+        }
     }
 
     /**
