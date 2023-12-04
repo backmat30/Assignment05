@@ -11,6 +11,22 @@ public class Game41Utils {
      */
     private static Map<Rank, Integer> rankToPointMap;
 
+    static{
+        rankToPointMap.put(Rank.ACE, 11);
+        rankToPointMap.put(Rank.TWO, 2);
+        rankToPointMap.put(Rank.THREE, 3);
+        rankToPointMap.put(Rank.FOUR, 4);
+        rankToPointMap.put(Rank.FIVE, 5);
+        rankToPointMap.put(Rank.SIX, 6);
+        rankToPointMap.put(Rank.SEVEN, 7);
+        rankToPointMap.put(Rank.EIGHT, 8);
+        rankToPointMap.put(Rank.NINE, 9);
+        rankToPointMap.put(Rank.TEN, 10);
+        rankToPointMap.put(Rank.JACK, 10);
+        rankToPointMap.put(Rank.QUEEN, 10);
+        rankToPointMap.put(Rank.KING, 10);
+    }
+
     /**
      * calculates the point value for a given hand
      * @param hand the hand being totalled
