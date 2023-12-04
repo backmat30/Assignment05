@@ -48,7 +48,7 @@ public class CardGroup {
      * @return returns card at the index given
      */
     public Card getCard(int index){
-
+        return cardList.get(index);
     }
 
     /**
@@ -56,7 +56,10 @@ public class CardGroup {
      * @return returns the last card in the group
      */
     public Card getLastCard(){
-
+        if(cardList.size() == 0){
+            return null;
+        }
+        return cardList.get(cardList.size() - 1);
     }
 
     /**
