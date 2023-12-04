@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Random;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * class representing a group of cards
@@ -108,14 +109,14 @@ public class CardGroup {
      * @return returns the size of the card list
      */
     public int size(){
-
+        return cardList.size();
     }
 
     /**
      * sorts the card group
      */
     public void sort(){
-
+        cardList.sort(null);
     }
 
     /**
@@ -123,7 +124,11 @@ public class CardGroup {
      * @return returns the string representation of the card group
      */
     public String toString(){
-
+        String output = "";
+        for (Card card : cardList) {
+            output += card.toString() + " ";
+        }
+        return output;
     }
 
     @Override
