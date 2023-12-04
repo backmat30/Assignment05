@@ -14,6 +14,6 @@ public enum Suit {
      * @return returns the string representation of the suit
      */
     public String toString(){
-
+        return name().toLowerCase();
     }
 }
