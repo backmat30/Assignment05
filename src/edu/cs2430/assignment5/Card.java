@@ -41,7 +41,7 @@ public class Card {
      */
     @Override
     public String toString(){
-
+        return String.format("%s of %s", rank.toString(), suit.toString());
     }
 
     /**
