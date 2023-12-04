@@ -12,7 +12,8 @@ public class Card {
      * @param otherCard card to be copied from
      */
     public Card(Card otherCard){
-
+        rank = otherCard.getRank();
+        suit = otherCard.getSuit();
     }
 
     /**
@@ -21,7 +22,8 @@ public class Card {
      * @param suit card suit
      */
     public Card(Rank rank, Suit suit){
-
+        this.rank = rank;
+        this.suit = suit;
     }
 
     /**
