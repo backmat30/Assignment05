@@ -39,7 +39,7 @@ public class CardGroup {
      * clears the card list
      */
     public void clear(){
-
+        cardList = new ArrayList<>();
     }
 
     /**
