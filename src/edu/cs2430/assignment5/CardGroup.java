@@ -14,7 +14,7 @@ public class CardGroup {
      * default constructor, sets cardList to an empty list
      */
     public CardGroup(){
-
+        cardList = new ArrayList<>();
     }
 
     /**
@@ -22,7 +22,9 @@ public class CardGroup {
      * @param otherGroup cardGroup to be copied from
      */
     public CardGroup(CardGroup otherGroup){
-
+        for(int i = 0; i < otherGroup.size(); i++){
+            cardList.add(otherGroup.getCard(i));
+        }
     }
 
     /**
