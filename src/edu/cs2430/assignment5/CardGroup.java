@@ -67,7 +67,7 @@ public class CardGroup {
      * @return returns true if empty otherwise false
      */
     public boolean isEmpty(){
-
+        return cardList.size() == 0;
     }
 
     /**
