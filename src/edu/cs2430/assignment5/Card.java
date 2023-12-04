@@ -9,9 +9,9 @@ public class Card {
     
     /**
      * copy constructor
-     * @param otheCard card to be copied from
+     * @param otherCard card to be copied from
      */
-    public Card(Card otheCard){
+    public Card(Card otherCard){
 
     }
 
@@ -29,8 +29,11 @@ public class Card {
      * @param otheCard the card compared with the current card
      * @return suit comparison if suits dont match, otherwise returns rank comparison
      */
-    public int compareTo(Card otheCard){
-
+    public int compareTo(Card otherCard){
+        if(otherCard.getSuit() != suit){
+            return suit.compareTo(otherCard.getSuit());
+        }
+        return rank.compareTo(otherCard.rank);
     }
 
     /**
