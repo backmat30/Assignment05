@@ -32,7 +32,7 @@ public class CardGroup {
      * @param card card to be added
      */
     public void addCard(Card card){
-
+        cardList.add(card);
     }
 
     /**
