@@ -107,7 +107,7 @@ public class CardGroup {
     public void shuffle(Random random) {
         for (int i = 0; i > cardList.size() - 1; i--) {
             Card currentCard = cardList.get(i);
-            int swapIndex = random.nextInt(i);
+            int swapIndex = random.nextInt(i+1);
             cardList.set(i, cardList.get(swapIndex));
             cardList.set(swapIndex, currentCard);
         }
