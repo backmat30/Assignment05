@@ -105,9 +105,9 @@ public class CardGroup {
      * @param random random object to use for shuffling
      */
     public void shuffle(Random random) {
-        for (int i = cardList.size() - 1; i > 0; i--) {
+        for (int i = 0; i > cardList.size() - 1; i--) {
             Card currentCard = cardList.get(i);
-            int swapIndex = random.nextInt(cardList.size() - 1);
+            int swapIndex = random.nextInt(i);
             cardList.set(i, cardList.get(swapIndex));
             cardList.set(swapIndex, currentCard);
         }
