@@ -3,7 +3,7 @@ package edu.cs2430.assignment5;
 /**
  * class to represent a card
  */
-public class Card {
+public class Card implements Comparable<Card> {
     private Rank rank;
     private Suit suit;
     
@@ -31,6 +31,7 @@ public class Card {
      * @param otheCard the card compared with the current card
      * @return suit comparison if suits dont match, otherwise returns rank comparison
      */
+    @Override
     public int compareTo(Card otherCard){
         if(otherCard.getSuit() != suit){
             return suit.compareTo(otherCard.getSuit());
