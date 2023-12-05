@@ -105,12 +105,20 @@ public class CardGroup {
      * @param random random object to use for shuffling
      */
     public void shuffle(Random random) {
-        for (int i = cardList.size() - 1; i >= 0; i--) {
-            Card currentCard = cardList.get(i);
-            int swapIndex = random.nextInt(i+1);
-            cardList.set(i, cardList.get(swapIndex));
-            cardList.set(swapIndex, currentCard);
+        for (int i = 0; i < cardList.size(); i++) {
+            int index = random.nextInt(i);
+
+            // var meHateJava = cardList.get(i);
+            // cardList.set(i, cardList.get(index));
+            Collections.swap(cardList, i, index);
         }
+
+        // for (int i = cardList.size() - 1; i >= 0; i--) {
+        //     Card currentCard = cardList.get(i);
+        //     int swapIndex = random.nextInt(i+1);
+        //     cardList.set(i, cardList.get(swapIndex));
+        //     cardList.set(swapIndex, currentCard);
+        // }
     }
 
     /**
