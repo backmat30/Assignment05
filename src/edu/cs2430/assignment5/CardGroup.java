@@ -105,7 +105,7 @@ public class CardGroup {
      * @param random random object to use for shuffling
      */
     public void shuffle(Random random) {
-        for (int i = 0; i < cardList.size() - 1; i++) {
+        for (int i = cardList.size() - 1; i > 0; i--) {
             int index = random.nextInt(i+1);
 
             // var meHateJava = cardList.get(i);
