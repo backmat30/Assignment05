@@ -1,5 +1,6 @@
 package edu.cs2430.assignment5;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -33,7 +34,33 @@ public class Game41Utils {
      * @return returns points for the given hand
      */
     public static int calculateHandValue(CardGroup hand){
+        Map<Suit, Integer> pointsPerSuit = new HashMap<>();
+        for(Suit suit: Suit.values()){
+            pointsPerSuit.put(suit, 0);
+        }
+        for(int i = 0; i < hand.size(); i++){
+            Suit cardSuit = hand.getCard(i).getSuit();
+            int cardPoints = getPointValue(hand.getCard(i).getRank());
 
+            pointsPerSuit.replace(cardSuit, pointsPerSuit.get(cardSuit) + cardPoints);
+        }
+
+        Suit maxSuit = Suit.CLUBS;
+        int maxPoints = pointsPerSuit.get(Suit.CLUBS);
+        for(Suit suit: Suit.values()){
+            if(pointsPerSuit.get(suit) > maxPoints){
+                maxSuit = suit;
+                maxPoints = pointsPerSuit.get(suit);
+            }
+        }
+
+        for(Suit suit: Suit.values()){
+            if(suit != maxSuit){
+                maxPoints -= pointsPerSuit.get(suit);
+            }
+        }
+
+        return maxPoints;
     }
 
     /**
@@ -42,7 +69,7 @@ public class Game41Utils {
      * @return returns the point value for the rank
      */
     public static int getPointValue(Rank rank){
-
+        return rankToPointMap.get(rank);
     }
     
     /**
@@ -53,6 +80,12 @@ public class Game41Utils {
      * @return returns true if the round is over, otherwise false
      */
     public static boolean isHandOver(CardGroup deck, int knockIndex, int currentTurnIndex){
-
+        if(deck.size() == 0){
+            return true;
+        }
+        if(currentTurnIndex == knockIndex){
+            return true;
+        }
+        return false;
     }
 }
