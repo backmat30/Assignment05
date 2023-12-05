@@ -2,7 +2,6 @@ package edu.cs2430.assignment5;
 
 import java.util.List;
 import java.util.Random;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -25,6 +24,7 @@ public class CardGroup {
      * @param otherGroup cardGroup to be copied from
      */
     public CardGroup(CardGroup otherGroup) {
+        cardList = new ArrayList<>();
         for (int i = 0; i < otherGroup.size(); i++) {
             cardList.add(otherGroup.getCard(i));
         }
@@ -126,7 +126,7 @@ public class CardGroup {
      * sorts the card group
      */
     public void sort() {
-        cardList.sort(null);
+        Collections.sort(cardList);
     }
 
     /**
