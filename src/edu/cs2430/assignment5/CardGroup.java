@@ -106,7 +106,7 @@ public class CardGroup {
      */
     public void shuffle(Random random) {
         for (int i = 0; i < cardList.size(); i++) {
-            int index = random.nextInt(i);
+            int index = random.nextInt(i+1);
 
             // var meHateJava = cardList.get(i);
             // cardList.set(i, cardList.get(index));
