@@ -137,7 +137,7 @@ public class CardGroup {
     public String toString() {
         String output = "";
         for (Card card : cardList) {
-            output += card.toString() + " ";
+            output += card.toString() + "\n";
         }
         return output;
     }
