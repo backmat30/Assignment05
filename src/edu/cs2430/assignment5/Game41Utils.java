@@ -12,7 +12,8 @@ public class Game41Utils {
      */
     private static Map<Rank, Integer> rankToPointMap;
 
-    static{
+    static {
+        rankToPointMap = new HashMap<>();
         rankToPointMap.put(Rank.ACE, 11);
         rankToPointMap.put(Rank.TWO, 2);
         rankToPointMap.put(Rank.THREE, 3);
